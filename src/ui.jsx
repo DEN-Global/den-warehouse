@@ -1,6 +1,6 @@
 import {useEffect,useRef,useState} from 'react';
 import {X,Warehouse} from 'lucide-react';
-export function Brand(){return <div className="brand"><div className="brand-row"><span className="mark" aria-hidden="true"><i/><i/><i/><i/></span><strong>DEN</strong></div><small>One network. Every journey.</small></div>;}
+export function Brand(){return <div className="brand"><div className="brand-row"><span className="mark" aria-hidden="true"><i/><i/><i/><i/></span><strong>DEN Global</strong></div><small>One network. Every journey.</small></div>;}
 export function Field({label,children,...props}){return <label className="field"><span>{label}</span>{children??<input {...props}/>}</label>;}
 export function Form({onSubmit,children,submit='Save',className=''}){
  const [busy,setBusy]=useState(false),[error,setError]=useState('');
