@@ -30,3 +30,9 @@ CSS has a mobile breakpoint and scroll containment for data tables. Browser view
 ## Remaining product and security boundaries
 
 No live approvals, identities, parcels or funds were handled. The local reviewer role and approvals are test-only. Operational notes do not prove custody or change inventory. Email ownership verification/recovery, production provisioning, complete warehouse inventory/custody and cloud staging remain unfinished.
+
+## Repository verification
+
+- Backend CI: https://github.com/DEN-Global/den-backend/actions/runs/41796072531 — success.
+- Warehouse CI: https://github.com/DEN-Global/den-warehouse/actions/runs/41796221157 — success for the application commit.
+- Two planning-chat reviews were received and used. A final verified-status message is visible in that conversation, but ChatGPT returned “Unknown error” instead of a reply, including after retry. [Handoff screenshot](planning-chat-update.jpg). The user's existing unsent draft was restored.
