@@ -23,6 +23,6 @@ All displayed business, facility, team and activity information comes from the A
 
 ## Verification and scope
 
-Frontend production build and dependency audit pass. The backend has 54 automated tests including real workerd/D1 HTTP execution. Browser QA exercised owner registration, restart/reload persistence, administrative MFA approval, staff joining, permitted receiving and forbidden dispatch; mobile viewport verification remains outstanding. See [visual verification](docs/verification/README.md).
+Frontend production build and dependency audit pass. The backend has 54 automated tests including real HTTP execution against the backend. Browser QA exercised owner registration, restart/reload persistence, administrative MFA approval, staff joining, permitted receiving and forbidden dispatch; mobile viewport verification remains outstanding. See [visual verification](docs/verification/README.md).
 
 This is a development warehouse slice. Email verification/recovery, live documents/identity, production deployment, inventory ledger, complete custody workflow, offline sync and other DEN applications are unfinished. Test account approvals are not real business verification. No payments or provider booking is enabled.
