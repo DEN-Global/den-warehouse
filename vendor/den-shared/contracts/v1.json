@@ -1,0 +1,25 @@
+{
+  "version":"1.0.0",
+  "transport":{"basePath":"/api","credentials":"same-origin cookie","csrf":"x-csrf-token from GET /auth/me for mutations","mutationOrigin":"must match configured APP_ORIGIN","timestamps":"unix milliseconds","amounts":"integer currency minor units"},
+  "authentication":{"register":{"method":"POST","path":"/auth/register","body":["name","email","password"]},"login":{"method":"POST","path":"/auth/login","body":["email","password","code?"]},"session":{"method":"GET","path":"/auth/me","response":["user","csrfToken","freshMfa"]},"logout":{"method":"POST","path":"/auth/logout","body":[]},"mfaSetup":{"method":"POST","path":"/auth/mfa/setup","body":["password"]},"mfaConfirm":{"method":"POST","path":"/auth/mfa/confirm","body":["code"]},"reauth":{"method":"POST","path":"/auth/reauth","body":["password","code"]}},
+  "platform":{"prefix":"/platform","routes":[
+    {"path":"/profile","methods":["GET","PATCH"],"patch":["name","phone"],"response":"profile"},
+    {"path":"/addresses","methods":["GET","POST"],"post":["label","address","country"],"response":"addresses"},
+    {"path":"/organizations","methods":["GET","POST"],"post":["name","country"],"response":"organizations"},
+    {"path":"/organizations/:id/products","methods":["GET","POST"],"post":["name","priceMinor","currency","stock"],"response":"products"},
+    {"path":"/products/:id","methods":["PATCH"],"patch":["name?","priceMinor?","stock?"]},
+    {"path":"/rider","methods":["GET","POST"],"post":["vehicle"],"response":"rider"},
+    {"path":"/cart","methods":["GET","POST"],"post":["productId","quantity"],"response":"items","note":"quantity zero removes; one organization/currency per order"},
+    {"path":"/orders","methods":["GET","POST"],"post":["addressId","deliveryPayment"],"deliveryPayment":["cash","digital"],"response":"orders","note":"POST requires DEN_SANDBOX_PAYMENTS=true; no live funds collected"},
+    {"path":"/orders/:id","methods":["GET"],"response":"order","note":"only assigned rider, consumer and organization owner; role-filtered verification secrets"},
+    {"path":"/orders/:id/receipt","methods":["GET"],"response":"receipt"},
+    {"path":"/orders/:id/:action","methods":["POST"],"actions":{"reserve":[],"release":[],"ready":[],"organization-scan":["token"],"handoff":[],"pickup":[],"cash-confirm":["code"],"delivery-code":["code"],"complete":["token"]}},
+    {"path":"/notifications","methods":["GET"],"response":"notifications"},
+    {"path":"/admin/reviews","methods":["GET","POST"],"post":["type","id","status","reason"],"type":["organization","rider"],"status":["approved","rejected","suspended"]},
+    {"path":"/admin/accounts","methods":["GET","POST"],"post":["userId","level","permissions"],"level":["ordinary","lesser_super_admin"]}
+  ],"orderStates":["placed","reserved","picked_up","delivered"],"applicationStates":["pending","approved","rejected","suspended"],"currencies":["NGN","USD","GBP","EUR"],"vehicleCategories":["bicycle","motorcycle","car","van","truck","other"],"listFieldConvention":"database snake_case; order detail camelCase"},
+  "trade":{"get":"/trade","post":"/admin/trade","body":["enabled","revision","countries"],"authorization":"Primary identity + fresh MFA; locked by default; countries still require active service configuration"},
+  "services":{"prefix":"/services","wallet":{"method":"GET","path":"/wallet","response":["balances","entries","liveMoneyEnabled","withdrawalsEnabled"]},"messages":{"path":"/orders/:id/messages?channel=:channel","methods":["GET","POST"],"post":["idempotencyKey","text"],"channels":["rider_consumer","manager_rider"]},"tracking":{"path":"/orders/:id/tracking","methods":["GET","POST"],"post":["idempotencyKey","latitude","longitude","accuracyMeters","recordedAt","simulated"],"response":["state","point","eta"]}},
+  "community":{"prefix":"/community","routes":[{"path":"/communities","methods":["GET","POST"],"post":["name","country"]},{"path":"/communities/:id/join","methods":["POST"]},{"path":"/communities/:id/leave","methods":["POST"]},{"path":"/communities/:id/posts","methods":["GET","POST"],"post":["body"]},{"path":"/posts/:id/comments","methods":["GET","POST"],"post":["body"]},{"path":"/organizations/:id/reviews","methods":["GET","POST"],"post":["orderId","rating","body"]}]},
+  "securityInvariants":["no consumer-to-organization private messaging","no ordinary manager+rider combination","only first atomic rider reservation succeeds","Ready+organization scan+Confirm Handoff before pickup","cash confirmation separate from delivery code","consumer final order-specific short-lived QR confirmation","rider max five communities","real payments and international operational activation disabled"]
+}

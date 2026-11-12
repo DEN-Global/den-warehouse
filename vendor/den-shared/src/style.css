@@ -1,0 +1,10 @@
+@import './legacy.css' layer(legacy);
+@import './pet-companion.css';
+@import './app-enhancements.css';
+@import './network-theme.css';
+@import './theme-polish.css';
+
+.field>span.password-control{position:relative;display:flex;align-items:center}
+.password-control input{width:100%;padding-right:48px}
+.password-control .password-toggle{position:absolute;right:7px;display:grid;place-items:center;width:38px;height:38px;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer}
+.password-toggle:hover{background:var(--pale);color:var(--green)}

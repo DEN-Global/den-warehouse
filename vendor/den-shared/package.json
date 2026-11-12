@@ -1,0 +1,30 @@
+{
+  "name": "@den/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./api": "./src/api.js",
+    "./ui": "./src/ui.jsx",
+    "./App": "./src/App.jsx",
+    "./Auth": "./src/Auth.jsx",
+    "./NetworkScene": "./src/NetworkScene.jsx",
+    "./network-theme.css": "./src/network-theme.css",
+    "./style.css": "./src/style.css",
+    "./ThemeToggle": "./src/ThemeToggle.jsx",
+    "./theme-polish.css": "./src/theme-polish.css"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.2.8",
+    "@fontsource/manrope": "5.3.0",
+    "@fontsource/space-grotesk": "5.3.0",
+    "lucide-react": "1.68.0",
+    "qrcode": "1.5.4",
+    "three": "0.170.0"
+  },
+  "peerDependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

@@ -1,2 +1,5 @@
 @import './legacy.css' layer(legacy);
 @import './eco-theme.css';
+
+@import '@den/shared/network-theme.css';
+@import '@den/shared/theme-polish.css';
