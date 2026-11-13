@@ -13,7 +13,8 @@
     "./style.css": "./src/style.css",
     "./ThemeToggle": "./src/ThemeToggle.jsx",
     "./theme-polish.css": "./src/theme-polish.css",
-    "./RevealArtwork": "./src/RevealArtwork.jsx"
+    "./RevealArtwork": "./src/RevealArtwork.jsx",
+    "./GreenCommunity": "./src/GreenCommunity.jsx"
   },
   "dependencies": {
     "@fontsource/inter": "5.3.0",

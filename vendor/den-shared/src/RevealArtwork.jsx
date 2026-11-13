@@ -1,3 +1,2 @@
-import {useEffect,useRef} from 'react';
-import {attachReveal} from './den-background';
-export default function RevealArtwork(){const ref=useRef(null);const base=`/${location.pathname.split('/')[1]||'consumer'}/`;useEffect(()=>attachReveal(ref.current),[]);return <div ref={ref} className="den-reveal-art den-hero-art" tabIndex={0} role="img" aria-label="Fresh fruit market with an interactive spotlight reveal. Move your pointer, touch, or focus to reveal."><img className="den-art-base" src={`${base}fruit-market.jpg`} alt=""/><img className="den-art-reveal" src={`${base}fruit-market.jpg`} alt=""/><span className="den-reveal-hint">Explore with your cursor <span aria-hidden="true">↗</span></span></div>;}
+// Compatibility entry for older workspace imports.
+export {default} from './GreenCommunity';
