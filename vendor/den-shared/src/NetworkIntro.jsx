@@ -23,7 +23,7 @@ export default function NetworkIntro(){
    }
    if(playing)frame=requestAnimationFrame(draw);
   };
-  const resize=()=>{cancelAnimationFrame(frame);w=Math.max(1,el.clientWidth);h=Math.max(1,el.clientHeight);const d=Math.min(devicePixelRatio,1.5);el.width=w*d;el.height=h*d;ctx.setTransform(d,0,0,d,0,0);makeTargets();draw(performance.now());};
+  const resize=()=>{cancelAnimationFrame(frame);w=Math.max(1,el.clientWidth);h=Math.max(1,el.clientHeight);const d=Math.min(devicePixelRatio,2);el.width=w*d;el.height=h*d;ctx.setTransform(d,0,0,d,0,0);makeTargets();draw(performance.now());};
   const observer=new ResizeObserver(resize);observer.observe(el);const theme=new MutationObserver(()=>{if(!playing)draw(performance.now());});theme.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});resize();return()=>{cancelAnimationFrame(frame);observer.disconnect();theme.disconnect();};
  },[playing]);
  return <div className="den-item-background" aria-hidden="true"><canvas ref={canvas}/></div>;
