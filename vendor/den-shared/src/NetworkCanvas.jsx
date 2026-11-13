@@ -83,7 +83,7 @@ export default function NetworkCanvas({time,onReady}){
    lid.position.y=.79;bottom.position.y=-.78-explode*.25;strap.scale.set(1+explode*.17,1+explode*.24,1+explode*.17);face.position.z=explode*.2;scanner.position.y=Math.sin(t*.8)*.35;scanner.material.opacity=.12+smooth(8,11,t)*(1-smooth(14,17,t))*.25;
    core.rotation.y=.13*Math.sin(t*.25);core.position.y=.3+Math.sin(t*.65)*.08;world.rotation.y=azimuth;
    nodes.forEach((node,index)=>{node.position.y=nodePositions[index].y+Math.sin(t*.8+index)*.04;});pulses.forEach((pulse,index)=>pulse.position.copy(routes[index].getPointAt((t*.12+index*.22)%1)));
-   const distance=width/height<1?8.5:7.4;camera.position.set(0,distance*Math.sin(elevation),distance*Math.cos(elevation));camera.lookAt(0,-.12,0);renderer.render(scene,camera);
+   const distance=width/height<1?9.5:8.8;camera.position.set(0,distance*Math.sin(elevation),distance*Math.cos(elevation));camera.lookAt(0,-.12,0);renderer.render(scene,camera);
   };
   const resize=()=>{width=container.clientWidth;height=container.clientHeight;if(!width||!height)return;renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();render(playhead.current);};
   const observer=new ResizeObserver(resize);observer.observe(container);
