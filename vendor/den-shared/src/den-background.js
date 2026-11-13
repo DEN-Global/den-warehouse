@@ -12,6 +12,6 @@ export function mountBackground(){
  if(document.querySelector('.den-site-background'))return;
  const link=document.createElement('link');link.rel='stylesheet';link.href=asset('den-background.css');document.head.append(link);
  const host=document.createElement('div');host.className='den-site-background den-reveal-art';host.setAttribute('aria-hidden','true');
- for(const [name,cls] of [['statu-image.png','den-statue-base'],['statu-image-hover.png','den-statue-reveal']]){const img=document.createElement('img');img.src=asset(name);img.alt='';img.className=cls;host.append(img);}
+ for(const [name,cls] of [['fruit-market.jpg','den-art-base'],['fruit-market.jpg','den-art-reveal']]){const img=document.createElement('img');img.src=asset(name);img.alt='';img.className=cls;host.append(img);}
  document.body.prepend(host);attachReveal(host,document.body);
 }
