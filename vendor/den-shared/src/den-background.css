@@ -109,3 +109,6 @@ html[data-theme=dark] .den-page-background::after{background:linear-gradient(90d
 html[data-theme=dark] .den-page-background::before{filter:saturate(.80);opacity:.85}
 html[data-theme=dark] .den-page-background::after{background:linear-gradient(90deg,rgba(10,11,14,.85),rgba(10,11,14,.58) 70%,rgba(10,11,14,.66))}
 @media(max-width:780px){.den-page-background::before{background-size:cover;background-position:56% center}html[data-theme=dark] .den-page-background::after{background:rgba(10,11,14,.72)}}
+
+/* Legacy standalone theme controls are unavailable in the dark-only app. */
+html[data-theme] [data-den-theme-toggle]{display:none!important}

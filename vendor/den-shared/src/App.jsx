@@ -57,7 +57,7 @@ function Workspace({role}){
  let content;
  if(page==='community')content=<Community feed={role==='consumer'}/>;
  else if(page==='wallet')content=<Wallet/>;
- else if(page==='settings')content=<><h1>Settings.</h1><p className="muted">Manage your DEN account and workspace preferences.</p>{!user.adminLevel&&!user.selectedRole?<WorkspaceChoice/>:<section className="service-panel"><h2>Your workspace</h2><p>{user.adminLevel?'Your administrator access is managed by the account owner.':`Consumer and ${titleCase(user.selectedRole)} are available for your account. Your additional role is permanent.`}</p></section>}<section className="service-panel"><h2>Pet care</h2><p>Manage your pet profiles and discover reviewed care services.</p><a className="secondary" href="/pets/">Open Pet care</a></section><section className="service-panel"><h2>Appearance</h2><p>Choose the theme that works best for you.</p><ThemeToggle/></section></>;
+ else if(page==='settings')content=<><h1>Settings.</h1><p className="muted">Manage your DEN account and workspace preferences.</p>{!user.adminLevel&&!user.selectedRole?<WorkspaceChoice/>:<section className="service-panel"><h2>Your workspace</h2><p>{user.adminLevel?'Your administrator access is managed by the account owner.':`Consumer and ${titleCase(user.selectedRole)} are available for your account. Your additional role is permanent.`}</p></section>}<section className="service-panel"><h2>Pet care</h2><p>Manage your pet profiles and discover reviewed care services.</p><a className="secondary" href="/pets/">Open Pet care</a></section></>;
  else if(page==='security')content=<Security user={user} onRefresh={refresh}/>;
  else if(page==='profile')content=<Profile/>;
  else if(page==='notifications')content=<Notifications/>;
