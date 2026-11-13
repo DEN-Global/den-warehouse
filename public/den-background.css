@@ -17,3 +17,6 @@ body:has(.auth-layout)>.den-site-background::after{content:'';position:absolute;
 html[data-theme=light] body:has(.auth-layout){background:#000}html[data-theme=light] .auth-layout{background:transparent!important}
 
 .den-art-base{filter:brightness(.76) saturate(.9)}.den-art-reveal{filter:brightness(1.12) saturate(1.18)}body:has(.auth-layout)>.den-site-background::after{background:linear-gradient(0deg,#000 0%,#000d 28%,#0003 80%),linear-gradient(90deg,#0007,transparent 80%)}.den-site-background:not(:has(~ #root .auth-layout)){opacity:.055}
+
+.gps-sharing-bar{position:fixed;bottom:24px;right:24px;z-index:70;display:flex;align-items:center;gap:14px;max-width:min(540px,calc(100vw - 32px));padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;color:var(--ink);box-shadow:0 12px 32px #0005}.gps-sharing-bar>svg{color:var(--accent);flex-shrink:0}.gps-sharing-bar strong{font-size:13px}.gps-sharing-bar p{font-size:12px;margin:5px 0;line-height:1.5}.gps-sharing-bar small{font-size:10px;color:var(--muted)}.gps-sharing-bar button{white-space:nowrap;font-size:11px}@media(max-width:780px){.gps-sharing-bar{bottom:86px;right:16px;left:16px;padding:14px;gap:10px}.gps-sharing-bar>svg{display:none}.gps-sharing-bar button{padding:10px 12px!important}}
+.service-panel>button.text-button{display:block;margin-top:14px}
