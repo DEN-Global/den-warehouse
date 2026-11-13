@@ -1,0 +1,3 @@
+import {useEffect,useRef} from 'react';
+import {attachReveal} from './den-background';
+export default function RevealArtwork(){const ref=useRef(null);const base=`/${location.pathname.split('/')[1]||'consumer'}/`;useEffect(()=>attachReveal(ref.current),[]);return <div ref={ref} className="den-reveal-art den-hero-art" tabIndex={0} role="img" aria-label="Classical statue with an emerald spotlight reveal. Move your pointer, touch, or focus to reveal."><img className="den-statue-base" src={`${base}statu-image.png`} alt=""/><img className="den-statue-reveal" src={`${base}statu-image-hover.png`} alt=""/><span className="den-reveal-hint">Explore with your cursor <span aria-hidden="true">↗</span></span></div>;}
