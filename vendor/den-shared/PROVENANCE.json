@@ -5,7 +5,7 @@
   "files": {
     "src/Admin.jsx": "51544a4935587d730e90a2114ce7e880385c3c527035c43384a7760ef5f2e305",
     "src/AdminConsole.jsx": "dff201d3b0a78992daea87a856dd5b7096e8f3f39fea3bf1779d0e842635b863",
-    "src/App.jsx": "af0d579698cb86839731bcef37e70f816840007d96364919952d9b7714cff248",
+    "src/App.jsx": "6d1353f4dcf1a3f5ada9dde0ffae4b49a8747410cd995c4bc2182a3babe87d40",
     "src/Auth.jsx": "4aa011679ed15864aab1aad7f8464483ed5c6796ab3553eee8e2f7d08b7af98e",
     "src/Community.jsx": "b7390789c0cc60ba7173c65a945ef2f7d790aaa3775c8248484c4235204db4b2",
     "src/Consumer.jsx": "a993608fcaef752c06852fbcd51a58d8165b407e416093568bc7664625b74cf0",
@@ -35,7 +35,7 @@
     "src/pet-companion.css": "129792932f58dab9baf8a4dc3ff85e208e604850645286426e5bfdc282010ca5",
     "src/style.css": "235c19ac7017a94fee4fdeacdbbdccc4d7b669e698bb3508771876bcc0b43401",
     "src/theme-init.js": "2a7bd5f3bd0789ae930b853a68ec2353d670328fa5c2d3915686717b4ad20348",
-    "src/theme-polish.css": "29e1235ad9ab60dfe4a1361ca2a410b8f8709259d592b2a304075de04b9ed39e",
+    "src/theme-polish.css": "cb7dbf57fb5f306212706765223b0f318e3fa733891e57648885f392bf6717be",
     "src/ui.jsx": "57b8bd313dc3503d9a9eb580ed62f7afedc3344e529cc91cd0d1f69c7052a119",
     "contracts/v1.json": "547dd5fe30f771e170c87b9ab7a3376fe164e7525ca4790db29880e36d93b444"
   }
