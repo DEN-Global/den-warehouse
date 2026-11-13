@@ -1,10 +1,2 @@
-import {useEffect,useRef,useState} from 'react';
-import {Pause,Play} from 'lucide-react';
-export default function GreenCommunity({className=''}){
- const video=useRef(null),host=useRef(null),[wanted,setWanted]=useState(()=>!matchMedia('(prefers-reduced-motion: reduce)').matches&&!navigator.connection?.saveData),[visible,setVisible]=useState(false),[pageVisible,setPageVisible]=useState(()=>!document.hidden),[playing,setPlaying]=useState(false),[failed,setFailed]=useState(false);
- const base=`/${location.pathname.split('/')[1]||'consumer'}/`;
- useEffect(()=>{const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.15});observer.observe(host.current);const visibility=()=>setPageVisible(!document.hidden),media=matchMedia('(prefers-reduced-motion: reduce)'),motion=()=>{if(media.matches)setWanted(false);};document.addEventListener('visibilitychange',visibility);media.addEventListener('change',motion);return()=>{observer.disconnect();document.removeEventListener('visibilitychange',visibility);media.removeEventListener('change',motion);};},[]);
- useEffect(()=>{const player=video.current;if(wanted&&visible&&pageVisible&&!failed)void player.play().catch(()=>setPlaying(false));else player.pause();},[wanted,visible,pageVisible,failed]);
- const toggle=()=>{if(playing){setWanted(false);video.current.pause();}else{setWanted(true);void video.current.play().catch(()=>setPlaying(false));}};
- return <figure ref={host} className={`green-community ${className}`}><video ref={video} src={`${base}green-community.mp4`} poster={`${base}green-community-poster.jpg`} muted playsInline loop preload="metadata" onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)} onError={()=>setFailed(true)} aria-label="Illustrative green landscape with wind turbines and flowing water"/><figcaption>Community illustration</figcaption>{!failed?<button type="button" className="community-playback" aria-label={playing?'Pause illustration':'Play illustration'} onClick={toggle}>{playing?<Pause size={15}/>:<Play size={15}/>}<span>{playing?'Pause':'Play'}</span></button>:<span className="community-playback">Still illustration</span>}</figure>;
-}
+// The shared scene now sits behind every workspace rather than repeating in cards.
+export default function GreenCommunity(){return null;}
