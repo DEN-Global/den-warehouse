@@ -112,3 +112,5 @@ html[data-theme=dark] .den-page-background::after{background:linear-gradient(90d
 
 /* Legacy standalone theme controls are unavailable in the dark-only app. */
 html[data-theme] [data-den-theme-toggle]{display:none!important}
+
+.store-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.store-actions .delete-organization{color:var(--error-ink);min-height:44px;padding:10px 4px}@media(max-width:600px){.store-actions{flex-direction:column;align-items:stretch;gap:6px}}
