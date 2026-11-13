@@ -16,3 +16,6 @@
  document.addEventListener('DOMContentLoaded',updateButtons,{once:true});
  apply(current);
 })();
+
+// One decorative renderer shared by every workspace, without requiring React.
+(()=>{const source=document.currentScript?.src;if(!source)return;const start=()=>import(new URL('./den-background.js',source).href).then(m=>m.mountBackground()).catch(()=>{});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();})();
