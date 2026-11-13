@@ -102,3 +102,10 @@ html[data-theme=dark] .den-page-background{background:#101114}
 html[data-theme=dark] .den-page-background::before{filter:sepia(.22) saturate(.75);opacity:.62}
 html[data-theme=dark] .den-page-background::after{background:linear-gradient(90deg,rgba(10,11,14,.95),rgba(18,14,12,.46) 76%,rgba(10,11,14,.65))}
 @media(max-width:780px){.den-page-background::before{background-position:center;background-size:auto 100vh}.den-page-background::after{background:rgba(248,241,232,.82)}html[data-theme=dark] .den-page-background::after{background:rgba(10,11,14,.73)}}
+
+/* Latest selected mobile-shopping scene: full-frame cart and colorful lights. */
+.den-page-background::before{background-size:cover;background-position:60% center;filter:saturate(.78);opacity:1}
+.den-page-background::after{background:linear-gradient(90deg,rgba(248,241,232,.90),rgba(248,241,232,.72))}
+html[data-theme=dark] .den-page-background::before{filter:saturate(.80);opacity:.85}
+html[data-theme=dark] .den-page-background::after{background:linear-gradient(90deg,rgba(10,11,14,.85),rgba(10,11,14,.58) 70%,rgba(10,11,14,.66))}
+@media(max-width:780px){.den-page-background::before{background-size:cover;background-position:56% center}html[data-theme=dark] .den-page-background::after{background:rgba(10,11,14,.72)}}
