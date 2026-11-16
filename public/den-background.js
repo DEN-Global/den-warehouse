@@ -10,9 +10,9 @@ function openingAnimation(){
  const motion=matchMedia('(prefers-reduced-motion: reduce)');motion.addEventListener('change',()=>{if(motion.matches)finish();},{once:true});
 }
 export function mountBackground(){
- if(document.querySelector('[data-den-design]'))return;
- const link=document.createElement('link');link.rel='stylesheet';link.dataset.denDesign='blue-liquid-glass';link.href=new URL('./den-background.css',import.meta.url).href;document.head.append(link);
+ if(document.querySelector('.den-page-background'))return;
+ let link=document.querySelector('[data-den-design]');if(!link){link=document.createElement('link');link.rel='stylesheet';link.dataset.denDesign='blue-liquid-glass';link.href=new URL('./den-background.css',import.meta.url).href;document.head.append(link);}
  const scene=document.createElement('div');scene.className='den-page-background';scene.setAttribute('aria-hidden','true');document.body.prepend(scene);
  // Run after the shared stylesheet loads so the intro never flashes unstyled.
- link.addEventListener('load',openingAnimation,{once:true});
+ if(link.sheet)openingAnimation();else link.addEventListener('load',openingAnimation,{once:true});
 }
